@@ -1,7 +1,22 @@
 require_relative "testing_library"
 
 def hamming(strand_1, strand_2)
+  sum = 0
+  if (strand_1.length != strand_2.length) && (strand_1.length < strand_2.length)
+    len = strand_1.length - 1
+  elsif
+    (strand_1.length != strand_2.length) && (strand_1.length > strand_2.length)
+    len = strand_2.length - 1
+  else
+    len = strand_1.length
+  end
 
+  (0..len).each do |num|
+    if strand_1[num] != strand_2[num]
+      sum +=1
+    end
+  end
+  sum
 end
 
 check("Hamming distance between identical strands",
